@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "run": {
+    "run_id": "01M1A8RZ5KQSWD8FRTCGJVRE1G",
+    "started_at": "2026-08-30T21:21:16Z",
+    "finished_at": "2026-08-30T21:21:28Z",
+    "runner": "criterion",
+    "selectors": [
+      "impl=kiddo_v6,k=1,axis=f64,kiddo.stem=eytzinger,tree_size=2^16,query_count=100"
+    ],
+    "machine_hash": "w4exsrgpah",
+    "machine": {
+      "hash_components": [
+        "cpu_model",
+        "cpu_base_mhz",
+        "mem_speed_mts",
+        "mem_timings",
+        "board",
+        "chipset"
+      ],
+      "hash_observed": [
+        "cpu_model",
+        "board",
+        "chipset"
+      ],
+      "degraded": true,
+      "cpu_model": "AMD Ryzen 9 9950X 16-Core Processor",
+      "cpu_base_mhz": null,
+      "cores_physical": 16,
+      "threads_online": 32,
+      "mem": {
+        "total_bytes": 64853069824,
+        "speed_mts": null,
+        "timings": null,
+        "parts": []
+      },
+      "board": {
+        "vendor": "ASRock",
+        "name": "X870E Taichi Lite"
+      },
+      "chipset": "Advanced Micro Devices, Inc. [AMD] Raphael/Granite Ridge Root Complex"
+    },
+    "context": {
+      "kernel": "7.2.2-1-cachyos",
+      "os": "CachyOS",
+      "bench_profile": null,
+      "governor": "performance",
+      "smt": true,
+      "boost": true,
+      "isolated_cpus": null
+    },
+    "toolchain": {
+      "rustc": "1.89.0",
+      "host": "x86_64",
+      "target_cpu": null,
+      "rustflags": "-C target-cpu=native",
+      "features": [],
+      "cargo_profile": "release",
+      "opt_level": "3"
+    },
+    "source": {
+      "git_sha": null,
+      "git_dirty": false,
+      "crate_version": "0.1.0"
+    },
+    "subjects": {
+      "kiddo_v6": {
+        "version": "6.1.0",
+        "pinned_ref": "v6.1.0",
+        "sha": "0550f806c3f35c33b6bd0aca533112314b6c7c1f"
+      }
+    }
+  },
+  "points": [
+    {
+      "tags": {
+        "axis": "f64",
+        "dims": 3,
+        "idx": "u32",
+        "impl": "kiddo_v6",
+        "isa": "avx512",
+        "k": 1,
+        "kiddo.block_height": 3,
+        "kiddo.bucket": 32,
+        "kiddo.executor": "serial",
+        "kiddo.leaf": "flatvec",
+        "kiddo.stem": "eytzinger",
+        "kiddo.storage": "heap",
+        "metric": "squared_euclidean",
+        "query": "exact_nn",
+        "query_count": 100,
+        "tree_size": 65536
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 69.0657308313576,
+          "lower": 68.89319051696069,
+          "upper": 69.26141786956359,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 14478960.664902927,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 0.5218206072504703,
+        "median_ns": 68.80464954118652,
+        "mad_ns": 0.24449883803354688
+      },
+      "provenance": {
+        "criterion_id": "kiddo_v6_36"
+      }
+    }
+  ]
+}

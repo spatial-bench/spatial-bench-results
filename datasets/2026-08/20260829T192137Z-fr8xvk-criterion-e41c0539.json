@@ -1,0 +1,244 @@
+{
+  "schema_version": 1,
+  "run": {
+    "run_id": "e41c0539e362e03a",
+    "started_at": "2026-08-29T19:21:37Z",
+    "finished_at": "2026-08-29T19:21:37Z",
+    "runner": "criterion",
+    "selectors": [
+      "impl=kiddo_v6,k=1|20,axis=f64,kiddo.stem=eytzinger,tree_size=2^16|2^17,query_count=100"
+    ],
+    "machine_hash": "fr8xvk",
+    "machine": {
+      "hash_components": [
+        "cpu_model",
+        "cpu_base_mhz",
+        "mem_speed_mts",
+        "mem_timings",
+        "board",
+        "chipset"
+      ],
+      "hash_observed": [
+        "cpu_model",
+        "board",
+        "chipset"
+      ],
+      "degraded": true,
+      "cpu_model": "AMD Ryzen 9 9950X 16-Core Processor",
+      "cpu_base_mhz": null,
+      "cores_physical": 16,
+      "threads_online": 32,
+      "mem": {
+        "total_bytes": 64853377024,
+        "speed_mts": null,
+        "timings": null,
+        "parts": []
+      },
+      "board": {
+        "vendor": "ASRock",
+        "name": "X870E Taichi Lite"
+      },
+      "chipset": "Advanced Micro Devices, Inc. [AMD] Raphael/Granite Ridge Root Complex"
+    },
+    "context": {
+      "kernel": "7.1.8-1-cachyos",
+      "os": "CachyOS",
+      "bench_profile": null,
+      "governor": "performance",
+      "smt": true,
+      "boost": true,
+      "isolated_cpus": null
+    },
+    "toolchain": {
+      "rustc": "1.89.0",
+      "host": "x86_64",
+      "target_cpu": null,
+      "rustflags": "-C target-cpu=native",
+      "features": [],
+      "cargo_profile": "release",
+      "opt_level": "3"
+    },
+    "source": {
+      "git_sha": null,
+      "git_dirty": false,
+      "crate_version": "0.1.0"
+    },
+    "subjects": {
+      "kiddo_v6": {
+        "version": "6.0.0-alpha.4",
+        "pinned_ref": "v6.0.0-alpha.4",
+        "sha": "dc447328f0b818ec30bdda3c1119c4c0a5e2985e"
+      }
+    }
+  },
+  "points": [
+    {
+      "tags": {
+        "axis": "f64",
+        "dims": 3,
+        "idx": "u32",
+        "impl": "kiddo_v6",
+        "isa": "avx512",
+        "k": 1,
+        "kiddo.block_height": 3,
+        "kiddo.bucket": 32,
+        "kiddo.executor": "serial",
+        "kiddo.leaf": "flatvec",
+        "kiddo.stem": "eytzinger",
+        "kiddo.storage": "heap",
+        "metric": "squared_euclidean",
+        "query": "exact_nn",
+        "query_count": 100,
+        "tree_size": 65536
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 56.081081245027136,
+          "lower": 55.81741998757642,
+          "upper": 56.36361802656247,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 17831325.24907716,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 0.7801249694703826,
+        "median_ns": 55.98157665094339,
+        "mad_ns": 0.7696556151607729
+      },
+      "provenance": {
+        "criterion_id": "kiddo_v6_36"
+      }
+    },
+    {
+      "tags": {
+        "axis": "f64",
+        "dims": 3,
+        "idx": "u32",
+        "impl": "kiddo_v6",
+        "isa": "avx512",
+        "k": 1,
+        "kiddo.block_height": 3,
+        "kiddo.bucket": 32,
+        "kiddo.executor": "serial",
+        "kiddo.leaf": "flatvec",
+        "kiddo.stem": "eytzinger",
+        "kiddo.storage": "heap",
+        "metric": "squared_euclidean",
+        "query": "exact_nn",
+        "query_count": 100,
+        "tree_size": 131072
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 59.73319972728375,
+          "lower": 59.48952142572156,
+          "upper": 60.01071651103173,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 16741108.873550596,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 0.7468691051003747,
+        "median_ns": 59.67090954406023,
+        "mad_ns": 0.6473952134855249
+      },
+      "provenance": {
+        "criterion_id": "kiddo_v6_36"
+      }
+    },
+    {
+      "tags": {
+        "axis": "f64",
+        "dims": 3,
+        "idx": "u32",
+        "impl": "kiddo_v6",
+        "isa": "avx512",
+        "k": 20,
+        "kiddo.block_height": 3,
+        "kiddo.bucket": 32,
+        "kiddo.executor": "serial",
+        "kiddo.leaf": "flatvec",
+        "kiddo.stem": "eytzinger",
+        "kiddo.storage": "heap",
+        "metric": "squared_euclidean",
+        "query": "exact_nn",
+        "query_count": 100,
+        "tree_size": 65536
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 428.3363392371729,
+          "lower": 421.95512201639366,
+          "upper": 434.7845902332001,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 2334613.96663404,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 18.202055923105092,
+        "median_ns": 426.4379453665284,
+        "mad_ns": 13.235509086703264
+      },
+      "provenance": {
+        "criterion_id": "kiddo_v6_54"
+      }
+    },
+    {
+      "tags": {
+        "axis": "f64",
+        "dims": 3,
+        "idx": "u32",
+        "impl": "kiddo_v6",
+        "isa": "avx512",
+        "k": 20,
+        "kiddo.block_height": 3,
+        "kiddo.bucket": 32,
+        "kiddo.executor": "serial",
+        "kiddo.leaf": "flatvec",
+        "kiddo.stem": "eytzinger",
+        "kiddo.storage": "heap",
+        "metric": "squared_euclidean",
+        "query": "exact_nn",
+        "query_count": 100,
+        "tree_size": 131072
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 416.8264175359347,
+          "lower": 408.7602172314539,
+          "upper": 425.57994410041175,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 2399080.1876509893,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 24.13914231938601,
+        "median_ns": 411.80925351288056,
+        "mad_ns": 22.22707446246019
+      },
+      "provenance": {
+        "criterion_id": "kiddo_v6_54"
+      }
+    }
+  ]
+}
