@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "run": {
+    "run_id": "01M1BTJ1ZJ198HARR41J0GBB03",
+    "started_at": "2026-08-31T11:51:18Z",
+    "finished_at": "2026-08-31T11:51:30Z",
+    "runner": "perf",
+    "selectors": [
+      "impl=kiddo_v6,k=1,axis=f64,kiddo.stem=eytzinger,tree_size=2^16,query_count=100"
+    ],
+    "machine_hash": "w4exsrgpah-vsdf0",
+    "machine": {
+      "hash_components": [
+        "cpu_model",
+        "cpu_base_mhz",
+        "mem_speed_mts",
+        "mem_timings",
+        "board",
+        "chipset"
+      ],
+      "hash_observed": [
+        "cpu_model",
+        "mem_speed_mts",
+        "board",
+        "chipset"
+      ],
+      "degraded": true,
+      "cpu_model": "AMD Ryzen 9 9950X 16-Core Processor",
+      "cpu_base_mhz": null,
+      "cores_physical": null,
+      "threads_online": null,
+      "mem": {
+        "total_bytes": 64853069824,
+        "speed_mts": 6000,
+        "timings": null,
+        "parts": []
+      },
+      "board": {
+        "vendor": "ASRock",
+        "name": "X870E Taichi Lite"
+      },
+      "chipset": "Advanced Micro Devices, Inc. [AMD] Raphael/Granite Ridge Root Complex"
+    },
+    "context": {
+      "kernel": "7.2.2-1-cachyos",
+      "os": "CachyOS",
+      "bench_profile": null,
+      "governor": "performance",
+      "smt": true,
+      "boost": true,
+      "isolated_cpus": null,
+      "fingerprint": "/etc/spatial-bench/fingerprint.toml"
+    },
+    "toolchain": {
+      "rustc": "1.89.0",
+      "host": "x86_64",
+      "target_cpu": null,
+      "rustflags": "-C target-cpu=native",
+      "features": [],
+      "cargo_profile": "release",
+      "opt_level": "3"
+    },
+    "source": {
+      "git_sha": null,
+      "git_dirty": false,
+      "crate_version": "0.1.0"
+    },
+    "subjects": {
+      "kiddo_v6": {
+        "version": "6.1.0",
+        "pinned_ref": "v6.1.0",
+        "sha": "0550f806c3f35c33b6bd0aca533112314b6c7c1f"
+      }
+    }
+  },
+  "points": [
+    {
+      "tags": {
+        "axis": "f64",
+        "dims": 3,
+        "idx": "u32",
+        "impl": "kiddo_v6",
+        "isa": "avx512",
+        "k": 1,
+        "kiddo.block_height": 3,
+        "kiddo.bucket": 32,
+        "kiddo.executor": "serial",
+        "kiddo.leaf": "flatvec",
+        "kiddo.stem": "eytzinger",
+        "kiddo.storage": "heap",
+        "metric": "squared_euclidean",
+        "query": "exact_nn",
+        "query_count": 100,
+        "tree_size": 65536
+      },
+      "metrics": {
+        "branch_misses": {
+          "point": 104102357.0,
+          "unit": "count"
+        },
+        "cycles": {
+          "point": 65258388877.0,
+          "unit": "count"
+        },
+        "instructions": {
+          "point": 197060231034.0,
+          "unit": "count"
+        },
+        "latency_ns": {
+          "point": 71.24577102053563,
+          "lower": 70.4456707985322,
+          "upper": 72.11333202457178,
+          "unit": "ns/query"
+        },
+        "task_clock": {
+          "point": 11921.495466,
+          "unit": "ms"
+        },
+        "throughput_qps": {
+          "point": 14035920.808713876,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 2.391606399012217,
+        "median_ns": 70.81461620257038,
+        "mad_ns": 2.469277918177061
+      },
+      "provenance": {
+        "criterion_id": "kiddo_v6_36"
+      }
+    }
+  ]
+}
