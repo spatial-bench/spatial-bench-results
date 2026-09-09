@@ -41,7 +41,9 @@ jobs:
             --results . \
             --out "benchmarks-$SHA.sqlite" \
             --sha "$SHA"
-          zstd -q "benchmarks-$SHA.sqlite"
+          # gzip: the browser's DecompressionStream('gzip') decompresses it
+          # natively — no wasm codec in the client for what zstd saves here.
+          gzip -9 "benchmarks-$SHA.sqlite"
 
       - name: Push to R2
         env:
@@ -51,12 +53,12 @@ jobs:
           R2_BUCKET: ${{ secrets.R2_BUCKET }}
         run: |
           SHA="${GITHUB_SHA::12}"
-          DB="benchmarks-$SHA.sqlite.zst"
+          DB="benchmarks-$SHA.sqlite.gz"
           # Immutable: the object name carries the revision, so cache forever.
           aws s3 cp "$DB" "s3://$R2_BUCKET/$DB" \
             --endpoint-url "$R2_ENDPOINT" \
             --content-type "application/sqlite3" \
-            --content-encoding "zstd" \
+            --content-encoding "gzip" \
             --cache-control "public, max-age=31536000, immutable"
           # latest.json is the pointer — written last, cached not at all.
           SHA256=$(sha256sum "$DB" | cut -d' ' -f1)
