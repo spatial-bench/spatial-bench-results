@@ -43,6 +43,9 @@ jobs:
             --sha "$SHA"
           # gzip: the browser's DecompressionStream('gzip') decompresses it
           # natively — no wasm codec in the client for what zstd saves here.
+          # gzip replaces the file, so the integrity hash is taken first:
+          # it must describe the bytes the app actually opens (decompressed).
+          SHA256=$(sha256sum "benchmarks-$SHA.sqlite" | cut -d' ' -f1)
           gzip -9 "benchmarks-$SHA.sqlite"
 
       - name: Push to R2
@@ -61,7 +64,6 @@ jobs:
             --content-encoding "gzip" \
             --cache-control "public, max-age=31536000, immutable"
           # latest.json is the pointer — written last, cached not at all.
-          SHA256=$(sha256sum "$DB" | cut -d' ' -f1)
           SIZE=$(stat -c%s "$DB")
           printf '{"db": "%s", "sha": "%s", "sha256": "%s", "bytes": %s, "generated_at": "%s"}\n' \
             "$DB" "$SHA" "$SHA256" "$SIZE" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > latest.json
