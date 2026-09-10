@@ -46,6 +46,8 @@ jobs:
           # gzip replaces the file, so the integrity hash is taken first:
           # it must describe the bytes the app actually opens (decompressed).
           SHA256=$(sha256sum "benchmarks-$SHA.sqlite" | cut -d' ' -f1)
+          # Steps do not share shell variables; the pointer step reads it.
+          echo "SHA256=$SHA256" >> "$GITHUB_ENV"
           gzip -9 "benchmarks-$SHA.sqlite"
 
       - name: Push to R2
