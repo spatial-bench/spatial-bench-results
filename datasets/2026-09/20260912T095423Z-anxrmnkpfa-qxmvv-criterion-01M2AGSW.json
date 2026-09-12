@@ -1,0 +1,926 @@
+{
+  "schema_version": 1,
+  "run": {
+    "run_id": "01M2AGSWN4YCS81YKGK31MCA5J",
+    "started_at": "2026-09-12T09:54:23Z",
+    "finished_at": "2026-09-12T09:57:28Z",
+    "runner": "criterion",
+    "selectors": [
+      "impl=kiddo,query=nearest_n_within,axis=f32,dims=3,dataset=uniform,defaults_or_tuned=default,tree_size=2^16..2^24"
+    ],
+    "machine_hash": "anxrmnkpfa-qxmvv",
+    "machine": {
+      "hash_components": [
+        "cpu_model",
+        "cpu_base_mhz",
+        "mem_speed_mts",
+        "mem_timings",
+        "board",
+        "chipset"
+      ],
+      "hash_observed": [
+        "cpu_model",
+        "mem_speed_mts",
+        "board",
+        "chipset"
+      ],
+      "degraded": true,
+      "cpu_model": "AMD Ryzen 5 8500GE w/ Radeon 740M Graphics",
+      "cpu_base_mhz": null,
+      "cores_physical": null,
+      "threads_online": null,
+      "mem": {
+        "total_bytes": 15849508864,
+        "speed_mts": 5200,
+        "timings": null,
+        "parts": [
+          "M425R2GA3EB0-CWMOL"
+        ]
+      },
+      "board": {
+        "vendor": "LENOVO",
+        "name": "334A"
+      },
+      "chipset": "Advanced Micro Devices, Inc. [AMD] Phoenix Root Complex"
+    },
+    "context": {
+      "kernel": "6.12.96+deb13-amd64",
+      "os": "Debian GNU/Linux 13 (trixie)",
+      "bench_profile": null,
+      "governor": "performance",
+      "smt": true,
+      "boost": true,
+      "isolated_cpus": null,
+      "fingerprint": "/etc/spatial-bench/fingerprint.toml"
+    },
+    "toolchain": {
+      "rustc": "1.90.0",
+      "host": "x86_64",
+      "target_cpu": null,
+      "rustflags": null,
+      "features": [],
+      "cargo_profile": "release",
+      "opt_level": "3"
+    },
+    "source": {
+      "git_sha": null,
+      "git_dirty": false,
+      "crate_version": "0.1.0"
+    },
+    "subjects": {
+      "kiddo": {
+        "version": "6.1.0",
+        "pinned_ref": "v6.1.0",
+        "sha": "0550f806c3f35c33b6bd0aca533112314b6c7c1f"
+      }
+    }
+  },
+  "points": [
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u32",
+        "impl": "kiddo",
+        "isa": "native",
+        "k": 5,
+        "kiddo.block_height": 3,
+        "kiddo.bucket": 32,
+        "kiddo.leaf": "vec_of_arenas",
+        "kiddo.stem": "eytzinger",
+        "kiddo.storage": "heap",
+        "kiddo.target_results": 100,
+        "metric": "squared_euclidean",
+        "parallelism": "single_threaded",
+        "query": "nearest_n_within",
+        "query_batch_size": 100,
+        "query_batching": "batch_query",
+        "query_count": 100,
+        "tree_size": 65536
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 0.020752441764606125,
+          "lower": 0.02069986010806564,
+          "upper": 0.020805755700400535,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 48187100647.863434,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 0.00014932080485289786,
+        "median_ns": 0.020723006072106222,
+        "mad_ns": 0.00018469475583367975
+      },
+      "provenance": {
+        "criterion_id": "kiddo_28"
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u32",
+        "impl": "kiddo",
+        "isa": "native",
+        "k": 5,
+        "kiddo.block_height": 3,
+        "kiddo.bucket": 32,
+        "kiddo.leaf": "vec_of_arenas",
+        "kiddo.stem": "eytzinger",
+        "kiddo.storage": "heap",
+        "kiddo.target_results": 100,
+        "metric": "squared_euclidean",
+        "parallelism": "single_threaded",
+        "query": "nearest_n_within",
+        "query_batch_size": 100,
+        "query_batching": "batch_query",
+        "query_count": 100,
+        "tree_size": 131072
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 0.020511235614558965,
+          "lower": 0.02049289601561607,
+          "upper": 0.020530224277099444,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 48753766900.81974,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 0.00005319916423008061,
+        "median_ns": 0.020504953626174088,
+        "mad_ns": 0.000059727034003367294
+      },
+      "provenance": {
+        "criterion_id": "kiddo_28"
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u32",
+        "impl": "kiddo",
+        "isa": "native",
+        "k": 5,
+        "kiddo.block_height": 3,
+        "kiddo.bucket": 32,
+        "kiddo.leaf": "vec_of_arenas",
+        "kiddo.stem": "eytzinger",
+        "kiddo.storage": "heap",
+        "kiddo.target_results": 100,
+        "metric": "squared_euclidean",
+        "parallelism": "single_threaded",
+        "query": "nearest_n_within",
+        "query_batch_size": 100,
+        "query_batching": "batch_query",
+        "query_count": 100,
+        "tree_size": 262144
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 0.020481292698367907,
+          "lower": 0.02043816796800564,
+          "upper": 0.020532775585095097,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 48825043161.44493,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 0.00013532907075092316,
+        "median_ns": 0.020440577933214747,
+        "mad_ns": 0.0000761502390116836
+      },
+      "provenance": {
+        "criterion_id": "kiddo_28"
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u32",
+        "impl": "kiddo",
+        "isa": "native",
+        "k": 5,
+        "kiddo.block_height": 3,
+        "kiddo.bucket": 32,
+        "kiddo.leaf": "vec_of_arenas",
+        "kiddo.stem": "eytzinger",
+        "kiddo.storage": "heap",
+        "kiddo.target_results": 100,
+        "metric": "squared_euclidean",
+        "parallelism": "single_threaded",
+        "query": "nearest_n_within",
+        "query_batch_size": 100,
+        "query_batching": "batch_query",
+        "query_count": 100,
+        "tree_size": 524288
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 0.02048365010842732,
+          "lower": 0.02046878484006597,
+          "upper": 0.020498409560205506,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 48819424014.110794,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 0.0000422197819017886,
+        "median_ns": 0.02049171763969872,
+        "mad_ns": 0.00004713513357759828
+      },
+      "provenance": {
+        "criterion_id": "kiddo_28"
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u32",
+        "impl": "kiddo",
+        "isa": "native",
+        "k": 5,
+        "kiddo.block_height": 3,
+        "kiddo.bucket": 32,
+        "kiddo.leaf": "vec_of_arenas",
+        "kiddo.stem": "eytzinger",
+        "kiddo.storage": "heap",
+        "kiddo.target_results": 100,
+        "metric": "squared_euclidean",
+        "parallelism": "single_threaded",
+        "query": "nearest_n_within",
+        "query_batch_size": 100,
+        "query_batching": "batch_query",
+        "query_count": 100,
+        "tree_size": 1048576
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 0.02039197930635173,
+          "lower": 0.02038311165506794,
+          "upper": 0.020401703490873155,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 49038888524.5935,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 0.00002656489853407702,
+        "median_ns": 0.020388060535012825,
+        "mad_ns": 0.00002358674574291947
+      },
+      "provenance": {
+        "criterion_id": "kiddo_28"
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u32",
+        "impl": "kiddo",
+        "isa": "native",
+        "k": 5,
+        "kiddo.block_height": 3,
+        "kiddo.bucket": 32,
+        "kiddo.leaf": "vec_of_arenas",
+        "kiddo.stem": "eytzinger",
+        "kiddo.storage": "heap",
+        "kiddo.target_results": 100,
+        "metric": "squared_euclidean",
+        "parallelism": "single_threaded",
+        "query": "nearest_n_within",
+        "query_batch_size": 100,
+        "query_batching": "batch_query",
+        "query_count": 100,
+        "tree_size": 2097152
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 0.020423325568952176,
+          "lower": 0.02038865912896121,
+          "upper": 0.020459514351918374,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 48963622335.836136,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 0.00010101152551947676,
+        "median_ns": 0.02041628609855917,
+        "mad_ns": 0.00011226822156164528
+      },
+      "provenance": {
+        "criterion_id": "kiddo_28"
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u32",
+        "impl": "kiddo",
+        "isa": "native",
+        "k": 5,
+        "kiddo.block_height": 3,
+        "kiddo.bucket": 32,
+        "kiddo.leaf": "vec_of_arenas",
+        "kiddo.stem": "eytzinger",
+        "kiddo.storage": "heap",
+        "kiddo.target_results": 100,
+        "metric": "squared_euclidean",
+        "parallelism": "single_threaded",
+        "query": "nearest_n_within",
+        "query_batch_size": 100,
+        "query_batching": "batch_query",
+        "query_count": 100,
+        "tree_size": 4194304
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 0.020403279331634622,
+          "lower": 0.020387343182680876,
+          "upper": 0.020422070630939378,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 49011729131.67602,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 0.000049435428317238,
+        "median_ns": 0.02039870554864753,
+        "mad_ns": 0.00004429891103933497
+      },
+      "provenance": {
+        "criterion_id": "kiddo_28"
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u32",
+        "impl": "kiddo",
+        "isa": "native",
+        "k": 5,
+        "kiddo.block_height": 3,
+        "kiddo.bucket": 32,
+        "kiddo.leaf": "vec_of_arenas",
+        "kiddo.stem": "eytzinger",
+        "kiddo.storage": "heap",
+        "kiddo.target_results": 100,
+        "metric": "squared_euclidean",
+        "parallelism": "single_threaded",
+        "query": "nearest_n_within",
+        "query_batch_size": 100,
+        "query_batching": "batch_query",
+        "query_count": 100,
+        "tree_size": 8388608
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 0.02040702945579155,
+          "lower": 0.020391247451000696,
+          "upper": 0.020421697452791564,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 49002722427.8935,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 0.000043398939391791534,
+        "median_ns": 0.020417417313881536,
+        "mad_ns": 0.00003410160142448579
+      },
+      "provenance": {
+        "criterion_id": "kiddo_28"
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u32",
+        "impl": "kiddo",
+        "isa": "native",
+        "k": 5,
+        "kiddo.block_height": 3,
+        "kiddo.bucket": 32,
+        "kiddo.leaf": "vec_of_arenas",
+        "kiddo.stem": "eytzinger",
+        "kiddo.storage": "heap",
+        "kiddo.target_results": 100,
+        "metric": "squared_euclidean",
+        "parallelism": "single_threaded",
+        "query": "nearest_n_within",
+        "query_batch_size": 100,
+        "query_batching": "batch_query",
+        "query_count": 100,
+        "tree_size": 16777216
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 0.020415184009529713,
+          "lower": 0.020396299473465825,
+          "upper": 0.02043583115354808,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 48983148990.144035,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 0.00005630776794213367,
+        "median_ns": 0.020413661345739152,
+        "mad_ns": 0.000044822548472894074
+      },
+      "provenance": {
+        "criterion_id": "kiddo_28"
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u32",
+        "impl": "kiddo",
+        "isa": "native",
+        "k": 5,
+        "kiddo.block_height": 3,
+        "kiddo.bucket": 32,
+        "kiddo.leaf": "vec_of_arenas",
+        "kiddo.stem": "eytzinger",
+        "kiddo.storage": "heap",
+        "kiddo.target_results": 100,
+        "metric": "squared_euclidean",
+        "parallelism": "multi_threaded",
+        "query": "nearest_n_within",
+        "query_batch_size": 100,
+        "query_batching": "batch_query",
+        "query_count": 100,
+        "tree_size": 65536
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 0.020436868697900033,
+          "lower": 0.020392945883822275,
+          "upper": 0.0204922359693653,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 48931175063.17168,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 0.00014137161977717064,
+        "median_ns": 0.020398717252459182,
+        "mad_ns": 0.000047855986993122575
+      },
+      "provenance": {
+        "criterion_id": "kiddo_29"
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u32",
+        "impl": "kiddo",
+        "isa": "native",
+        "k": 5,
+        "kiddo.block_height": 3,
+        "kiddo.bucket": 32,
+        "kiddo.leaf": "vec_of_arenas",
+        "kiddo.stem": "eytzinger",
+        "kiddo.storage": "heap",
+        "kiddo.target_results": 100,
+        "metric": "squared_euclidean",
+        "parallelism": "multi_threaded",
+        "query": "nearest_n_within",
+        "query_batch_size": 100,
+        "query_batching": "batch_query",
+        "query_count": 100,
+        "tree_size": 131072
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 0.02038219430228832,
+          "lower": 0.02036156514973196,
+          "upper": 0.020407712185429618,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 49062430922.255,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 0.00006612935403870817,
+        "median_ns": 0.02036562246870937,
+        "mad_ns": 0.000028675866711745338
+      },
+      "provenance": {
+        "criterion_id": "kiddo_29"
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u32",
+        "impl": "kiddo",
+        "isa": "native",
+        "k": 5,
+        "kiddo.block_height": 3,
+        "kiddo.bucket": 32,
+        "kiddo.leaf": "vec_of_arenas",
+        "kiddo.stem": "eytzinger",
+        "kiddo.storage": "heap",
+        "kiddo.target_results": 100,
+        "metric": "squared_euclidean",
+        "parallelism": "multi_threaded",
+        "query": "nearest_n_within",
+        "query_batch_size": 100,
+        "query_batching": "batch_query",
+        "query_count": 100,
+        "tree_size": 262144
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 0.02040854238673581,
+          "lower": 0.02039387571867928,
+          "upper": 0.02042405254475117,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 48999089746.35706,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 0.00004293067612368997,
+        "median_ns": 0.020402756032534688,
+        "mad_ns": 0.00004111343755525739
+      },
+      "provenance": {
+        "criterion_id": "kiddo_29"
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u32",
+        "impl": "kiddo",
+        "isa": "native",
+        "k": 5,
+        "kiddo.block_height": 3,
+        "kiddo.bucket": 32,
+        "kiddo.leaf": "vec_of_arenas",
+        "kiddo.stem": "eytzinger",
+        "kiddo.storage": "heap",
+        "kiddo.target_results": 100,
+        "metric": "squared_euclidean",
+        "parallelism": "multi_threaded",
+        "query": "nearest_n_within",
+        "query_batch_size": 100,
+        "query_batching": "batch_query",
+        "query_count": 100,
+        "tree_size": 524288
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 0.020528525301158788,
+          "lower": 0.020493321630304123,
+          "upper": 0.020564078943368983,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 48712705142.22238,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 0.0001006078824290431,
+        "median_ns": 0.02051002778695167,
+        "mad_ns": 0.0000863909584959054
+      },
+      "provenance": {
+        "criterion_id": "kiddo_29"
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u32",
+        "impl": "kiddo",
+        "isa": "native",
+        "k": 5,
+        "kiddo.block_height": 3,
+        "kiddo.bucket": 32,
+        "kiddo.leaf": "vec_of_arenas",
+        "kiddo.stem": "eytzinger",
+        "kiddo.storage": "heap",
+        "kiddo.target_results": 100,
+        "metric": "squared_euclidean",
+        "parallelism": "multi_threaded",
+        "query": "nearest_n_within",
+        "query_batch_size": 100,
+        "query_batching": "batch_query",
+        "query_count": 100,
+        "tree_size": 1048576
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 0.02039823979508094,
+          "lower": 0.020378455495379373,
+          "upper": 0.020418286484178143,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 49023837843.16288,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 0.00005671106813606616,
+        "median_ns": 0.020397222463470532,
+        "mad_ns": 0.00007271259222156281
+      },
+      "provenance": {
+        "criterion_id": "kiddo_29"
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u32",
+        "impl": "kiddo",
+        "isa": "native",
+        "k": 5,
+        "kiddo.block_height": 3,
+        "kiddo.bucket": 32,
+        "kiddo.leaf": "vec_of_arenas",
+        "kiddo.stem": "eytzinger",
+        "kiddo.storage": "heap",
+        "kiddo.target_results": 100,
+        "metric": "squared_euclidean",
+        "parallelism": "multi_threaded",
+        "query": "nearest_n_within",
+        "query_batch_size": 100,
+        "query_batching": "batch_query",
+        "query_count": 100,
+        "tree_size": 2097152
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 0.020405969501175725,
+          "lower": 0.020376180537919866,
+          "upper": 0.020444144378572914,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 49005267793.93565,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 0.0000980405468227063,
+        "median_ns": 0.020395577222916163,
+        "mad_ns": 0.00005768155626529517
+      },
+      "provenance": {
+        "criterion_id": "kiddo_29"
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u32",
+        "impl": "kiddo",
+        "isa": "native",
+        "k": 5,
+        "kiddo.block_height": 3,
+        "kiddo.bucket": 32,
+        "kiddo.leaf": "vec_of_arenas",
+        "kiddo.stem": "eytzinger",
+        "kiddo.storage": "heap",
+        "kiddo.target_results": 100,
+        "metric": "squared_euclidean",
+        "parallelism": "multi_threaded",
+        "query": "nearest_n_within",
+        "query_batch_size": 100,
+        "query_batching": "batch_query",
+        "query_count": 100,
+        "tree_size": 4194304
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 0.02037480958293125,
+          "lower": 0.020356855304048977,
+          "upper": 0.020393374743242498,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 49080213286.39743,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 0.00005166449179070609,
+        "median_ns": 0.02037203389201252,
+        "mad_ns": 0.00006239734655345314
+      },
+      "provenance": {
+        "criterion_id": "kiddo_29"
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u32",
+        "impl": "kiddo",
+        "isa": "native",
+        "k": 5,
+        "kiddo.block_height": 3,
+        "kiddo.bucket": 32,
+        "kiddo.leaf": "vec_of_arenas",
+        "kiddo.stem": "eytzinger",
+        "kiddo.storage": "heap",
+        "kiddo.target_results": 100,
+        "metric": "squared_euclidean",
+        "parallelism": "multi_threaded",
+        "query": "nearest_n_within",
+        "query_batch_size": 100,
+        "query_batching": "batch_query",
+        "query_count": 100,
+        "tree_size": 8388608
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 0.020445579894902165,
+          "lower": 0.020416960970898373,
+          "upper": 0.020479656153795104,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 48910327080.00309,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 0.00008876914548537835,
+        "median_ns": 0.020445158961796862,
+        "mad_ns": 0.00008039769377075017
+      },
+      "provenance": {
+        "criterion_id": "kiddo_29"
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u32",
+        "impl": "kiddo",
+        "isa": "native",
+        "k": 5,
+        "kiddo.block_height": 3,
+        "kiddo.bucket": 32,
+        "kiddo.leaf": "vec_of_arenas",
+        "kiddo.stem": "eytzinger",
+        "kiddo.storage": "heap",
+        "kiddo.target_results": 100,
+        "metric": "squared_euclidean",
+        "parallelism": "multi_threaded",
+        "query": "nearest_n_within",
+        "query_batch_size": 100,
+        "query_batching": "batch_query",
+        "query_count": 100,
+        "tree_size": 16777216
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 0.020445332891218,
+          "lower": 0.02039791574554607,
+          "upper": 0.020498968116851608,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 48910917974.31851,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 0.00014439341458371885,
+        "median_ns": 0.02038363438130557,
+        "mad_ns": 0.00005222774263398309
+      },
+      "provenance": {
+        "criterion_id": "kiddo_29"
+      }
+    }
+  ]
+}
