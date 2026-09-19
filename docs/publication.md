@@ -1,16 +1,16 @@
 # Build and publish a snapshot
 
-The website's database is built from run JSON and machine TOML in this repository.
-The engine's `publish` command creates local files; the GitHub workflow uploads
-them after review. Local collation needs no production credentials or benchmark
-execution.
+The website's database is built from the run JSON and machine TOML stored in this
+repository. The engine's `publish` command produces the local files, and the GitHub
+workflow uploads them after review. Building a snapshot locally requires no
+production credentials and no benchmark execution.
 
 ## Build a local database
 
-Start in the **results repository root**, with an engine checkout at sibling
-`../spatial-bench`. Install its
+Start in the **results repository root**, with an engine checkout at the sibling
+path `../spatial-bench`. Install the engine's
 [build prerequisites](https://github.com/spatial-bench/spatial-bench-core/blob/main/docs/development.md)
-and Python 3 with the standard `sqlite3` module.
+along with Python 3 and its standard `sqlite3` module.
 
 ```sh
 export SPATIAL_RESULTS_OUT=$(mktemp -d)
@@ -21,15 +21,16 @@ cargo run --release --manifest-path ../spatial-bench/Cargo.toml -p spatial-bench
   --sha "$SPATIAL_RESULTS_SHA"
 ```
 
-The output directory contains SQLite and an intermediate `latest.json`. At results
-revision `490451b`, collation produces **62 runs, 1,980 points and one machine**.
-Use a clean checkout and record the engine revision when reproducing a snapshot:
-`--sha` is a caller-supplied label, without working-tree verification. Existing
-output databases are replaced, which is why the example creates a new directory.
+The output directory will contain the SQLite database and an intermediate
+`latest.json`. At results revision `490451b`, collation produces **62 runs, 1,980
+points and one machine**. Use a clean checkout and record the engine revision when
+reproducing a snapshot, since `--sha` is a caller-supplied label with no
+working-tree verification behind it. Existing output databases are replaced, which
+is why the example writes into a fresh directory.
 
 ## Inspect and package the snapshot
 
-In the same shell, check SQLite and trace a point to its run:
+Still in the same shell, check the database and trace a point back to its run:
 
 ```sh
 python3 - <<'PY'
@@ -46,13 +47,13 @@ with sqlite3.connect(f"file:{out / manifest['db']}?mode=ro", uri=True) as db:
 PY
 ```
 
-For that revision, the selected run is `01M2FM95CY25TZ83AAV6S66ASZ`, measuring
-pykdtree `1.4.3` on `anxrmnkpfa-qxmvv`. Continue with the
-[annotated source record](format-and-provenance.md#locate-the-run) to inspect its
+For that revision the selected run is `01M2FM95CY25TZ83AAV6S66ASZ`, measuring
+pykdtree `1.4.3` on `anxrmnkpfa-qxmvv`. You can continue with the
+[annotated source record](format-and-provenance.md#locate-the-run) to look at its
 full tags, estimates and provenance.
 
-Create the gzip artifact and replace the intermediate manifest with the website
-format:
+Next, create the gzip artifact and rewrite the intermediate manifest in the format
+the website expects:
 
 ```sh
 python3 - <<'PY'
@@ -90,51 +91,52 @@ A local build of the example revision produced this manifest:
 }
 ```
 
-`db` is the artifact filename, `sha` the results revision and `generated_at` the
-UTC packaging time. `sha256` covers **raw SQLite bytes**; `bytes` counts the
-**compressed gzip file**. Gzip timestamps can differ from the production workflow
-without changing the decompressed content or its hash.
+Here `db` is the artifact filename, `sha` the results revision, and `generated_at`
+the UTC packaging time. `sha256` covers the **raw SQLite bytes** while `bytes`
+counts the **compressed gzip file**. Gzip timestamps can differ from the production
+workflow without changing the decompressed content or its hash.
 
 Copy `latest.json` and the named gzip file into the data location described in
 [web development](https://github.com/spatial-bench/spatial-bench-web/blob/main/CONTRIBUTING.md).
-The packaging step expects the intermediate manifest, so repeat the example from
-collation into a new directory.
+Because the packaging step expects the intermediate manifest, run the whole example
+again from collation if you need a new directory.
 
 ## Publish after review
 
-The [workflow](../.github/workflows/publish.yml) runs on pushes to `main` or manual
-dispatch. It checks out engine `main`, builds with stable Rust, collates the
-results revision and computes SHA-256 before `gzip -9`. It uploads
-`benchmarks-<12-character-results-revision>.sqlite.gz`, then updates `latest.json`.
+The [workflow](../.github/workflows/publish.yml) runs on pushes to `main` or on
+manual dispatch. It checks out engine `main`, builds with stable Rust, collates the
+results revision, and computes SHA-256 before running `gzip -9`. It then uploads
+`benchmarks-<12-character-results-revision>.sqlite.gz` and updates `latest.json`.
 
 The upload needs `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY`, `R2_ENDPOINT` and
-`R2_BUCKET` secrets, and AWS CLI access to that endpoint. The website Worker's
-`DATASET` binding must reference the same bucket. Upload metadata sets SQLite
-content type and gzip content encoding; the database receives a one-year
-`immutable` cache policy and the pointer receives `no-cache`.
+`R2_BUCKET` secrets, along with AWS CLI access to that endpoint; the website Worker's
+`DATASET` binding must reference the same bucket. Upload metadata sets the SQLite
+content type and gzip content encoding, and the database receives a one-year
+`immutable` cache policy while the pointer is marked `no-cache`.
 
-Object names derive from the results commit. A retry against the same revision
-can use a newer engine `main` and overwrite that key with different bytes. Record
-the engine checkout from workflow logs and avoid replacing a cached artifact with
-different content; a new reviewed results commit provides a new key.
+Object names are derived from the results commit. A retry against the same revision
+can pick up a newer engine `main` and overwrite that key with different bytes, so
+record the engine checkout from the workflow logs and avoid replacing a cached
+artifact with different content. A new, reviewed results commit gives you a new key
+to work with.
 
-After publication, inspect the workflow's revisions and counts, then fetch the
-site's pointer and named artifact. Decompress if necessary, compare the raw
-SHA-256, run `PRAGMA integrity_check` and verify representative run IDs. Confirm
-that the explorer loads that snapshot; an already open page may still hold the
-previous one.
+Once published, inspect the revisions and counts in the workflow log, then fetch the
+site's pointer and the artifact it names. Decompress if necessary, compare the raw
+SHA-256, run `PRAGMA integrity_check` and verify a few representative run IDs.
+Finally, confirm the explorer loads that snapshot, remembering that an already-open
+page may still be holding the previous one.
 
 ## Recover a failed publication
 
-For a collation error, inspect the named input or duplicate-run constraint and
-rebuild into a fresh directory. A failed command can leave a partial database.
-For an upload error, inspect the object and pointer separately: the object may
-have uploaded while the old pointer remains. Verify the object before completing
-an authorized pointer update or retry.
+For a collation error, inspect the named input or the duplicate-run constraint and
+rebuild into a fresh directory; a failed command can leave a partial database
+behind. For an upload error, examine the object and the pointer separately, since
+the object may have uploaded successfully while the old pointer remains. Verify the
+object before completing an authorized pointer update or retrying.
 
-For a browser integrity error, compare the pointer against the decompressed
-SQLite hash. Keep the integrity check enabled. A maintainer-approved rollback can
-restore a previously verified pointer; there is no dedicated rollback action or
+For a browser integrity error, compare the pointer against the decompressed SQLite
+hash. Leave the integrity check enabled. A maintainer-approved rollback can restore
+a previously verified pointer, but there is no dedicated rollback action and no
 automated retention policy. Source-record
 [corrections](../CONTRIBUTING.md#correct-a-result) affect future collation and do
 not purge earlier objects or client caches.

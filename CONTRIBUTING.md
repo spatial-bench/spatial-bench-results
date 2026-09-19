@@ -1,32 +1,33 @@
 # Contributing results
 
-After following the engine's
-[run guide](https://github.com/spatial-bench/spatial-bench-core/blob/main/docs/running-benchmarks.md),
-inspect the completed records and propose them in a pull request. Adapter changes
-should have their own
+Follow the engine's
+[run guide](https://github.com/spatial-bench/spatial-bench-core/blob/main/docs/running-benchmarks.md)
+first, then inspect the completed records and propose them in a pull request. If
+your work also changed an adapter, that change needs its own
 [bencher review](https://github.com/spatial-bench/spatial-bench-benchers/blob/master/CONTRIBUTING.md).
 
 ## Prepare a completed run
 
 Records normally appear below
-`${XDG_DATA_HOME:-$HOME/.local/share}/spatial-bench/runs/`.
-[Inspect the workload, source and machine fields](docs/format-and-provenance.md)
-before selecting runs for submission.
+`${XDG_DATA_HOME:-$HOME/.local/share}/spatial-bench/runs/`. Before choosing runs to
+submit, [inspect their workload, source and machine fields](docs/format-and-provenance.md).
 
-The PR should explain the workload selection, identify the runs and link evidence
-that the adapter answers the intended query. Include the invocation with its seed,
-engine/bencher revisions and generated dependency lockfiles. Record relevant
-compiler/interpreter versions and thread/affinity settings. Retain logs and raw
-samples needed to investigate the estimates. Explain failed or omitted cases,
-selection among reruns and any intended replacement of existing records.
+The pull request should explain the workload selection, identify the runs it adds,
+and link evidence that the adapter answers the intended query. Include the
+invocation with its seed, the engine and bencher revisions it used, and the
+generated dependency lockfiles. Record the compiler or interpreter versions and any
+thread or affinity settings. Keep the logs and raw samples that would be needed to
+investigate the estimates, and explain failed or omitted cases, how you chose among
+reruns, and whether existing records are meant to be replaced.
 
-These are review expectations. Automated submission checks cover a smaller set
-of [eligibility conditions](docs/format-and-provenance.md#submission-checks).
+These are review expectations, not what the tooling enforces. Automated submission
+checks cover a smaller set of
+[eligibility conditions](docs/format-and-provenance.md#submission-checks).
 
 ## Propose the results
 
-With Git push access to this repository and an authenticated `gh`, the engine can
-prepare and open the PR:
+If you have Git push access to this repository and an authenticated `gh`, the engine
+can prepare and open the PR for you:
 
 ```sh
 spatial-bench submit --to /path/to/clean/spatial-bench-results
@@ -34,48 +35,48 @@ spatial-bench submit --to /path/to/clean/spatial-bench-results
 
 > Use a dedicated, clean checkout whose local `main` is current. The command
 > submits **all eligible local runs**, stages **all destination changes**, commits
-> and pushes. It has no dry-run or run-ID filter.
+> and pushes, and has no dry-run mode or run-ID filter.
 
 The command copies records and extracts machine TOML, then creates a branch from
-local `main` using `git checkout -B`. It does not fetch that branch first. `--to`
-selects the checkout; PR creation still targets
-`spatial-bench/spatial-bench-results`. Review the local run directory and
-`git status` before invoking it.
+local `main` with `git checkout -B`. It does not fetch that branch first, so make
+sure the checkout is up to date. `--to` selects the destination checkout, while PR
+creation still targets `spatial-bench/spatial-bench-results`. Review the local run
+directory and `git status` before running it.
 
-Without central push access, prepare a normal fork PR. Preserve each run's
+Without central push access, prepare an ordinary fork PR. Preserve each run's
 filename under `datasets/YYYY-MM/`. For a new machine, include
-`machines/<machine_hash>.toml` containing `run.machine` converted to TOML with
-null values omitted; compare an existing record with the run before reusing it.
+`machines/<machine_hash>.toml` containing `run.machine` converted to TOML with null
+values omitted, and compare it against an existing record before reusing any of it.
 Review the complete diff before committing.
 
-If submission fails, inspect the checkout and remote branch before retrying.
-Copying precedes branch creation, and PR creation can fail after a successful
-push. An already pushed branch can be used to finish opening the PR.
+If submission fails, inspect the checkout and remote branch before retrying: the
+copy happens before branch creation, and PR creation can fail even after a
+successful push. An already-pushed branch can be used to finish opening the PR.
 
 ## Review and publication
 
-A reviewer should check the adapter's operation and timing boundary, source
-identity, machine context and selection of measurements. Registration conformance
-checks declared coverage; query-answer correctness needs separate evidence.
-The [methodology](https://spatial-bench.org/methodology) defines the estimators and
-controls to consider when comparing runs.
+A reviewer checks the adapter's operation and timing boundary, the source identity,
+the machine context, and whether the right measurements were selected. Registration
+conformance verifies declared coverage; query-answer correctness needs separate
+evidence. The [methodology](https://spatial-bench.org/methodology) defines the
+estimators and controls to keep in mind when comparing runs.
 
-[Collate locally](docs/publication.md#build-a-local-database) and confirm that the
-expected runs and cases appear. This checks parsing and database insertion.
-After merge, publication must upload both the database and its pointer before
-readers can load the new snapshot. Follow the
+[Collate the database locally](docs/publication.md#build-a-local-database) and
+confirm the expected runs and cases appear, which exercises both parsing and
+database insertion. After merge, publication has to upload the database and its
+pointer before readers can load the new snapshot; follow the
 [publication verification](docs/publication.md#publish-after-review) procedure.
 
 ## Correct a result
 
-Open an [issue](https://github.com/spatial-bench/spatial-bench-results/issues) or
-PR with the snapshot revision, run ID and case tags. Explain the error and supply
-a reproduction or corrected adapter. Maintainer review determines whether to add
-a rerun, edit a record or remove it. Preserve the distinction between measured
-results and corrected metadata.
+Open an [issue](https://github.com/spatial-bench/spatial-bench-results/issues) or a
+PR with the snapshot revision, run ID and case tags, explain the error, and supply a
+reproduction or a corrected adapter. It is maintainer review that decides whether
+the answer is a rerun, an edit to the record, or a removal, and the distinction
+between a measured result and corrected metadata should be preserved either way.
 
 Adding a run leaves earlier records intact. Editing or removing JSON changes the
-next full collation; there is no exclusion flag or automatic purge of older
-snapshots. Retention rules or mandatory independent reruns require a separate
+next full collation, but there is no exclusion flag and no automatic purge of older
+snapshots. Retention rules or mandatory independent reruns would require a separate
 policy decision. Changes to schema, metrics or publication should state their
-documentation impact and identify coordinated engine or website changes.
+documentation impact and identify any coordinated engine or website changes.
