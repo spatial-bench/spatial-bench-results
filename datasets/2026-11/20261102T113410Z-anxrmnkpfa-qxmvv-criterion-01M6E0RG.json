@@ -1,0 +1,1449 @@
+{
+  "schema_version": 1,
+  "run": {
+    "run_id": "01M6E0RGBWJ6JWKNMYT1AGRMQA",
+    "started_at": "2026-11-02T11:34:10Z",
+    "finished_at": "2026-11-02T11:36:51Z",
+    "runner": "criterion",
+    "selectors": [
+      "impl=nanoflann,query=exact_nn,axis=f32,dims=3,dataset=uniform,defaults_or_tuned=default,tree_size=2^16..2^24"
+    ],
+    "machine_hash": "anxrmnkpfa-qxmvv",
+    "machine": {
+      "hash_components": [
+        "cpu_model",
+        "cpu_base_mhz",
+        "mem_speed_mts",
+        "mem_timings",
+        "board",
+        "chipset"
+      ],
+      "hash_observed": [
+        "cpu_model",
+        "mem_speed_mts",
+        "board",
+        "chipset"
+      ],
+      "degraded": true,
+      "cpu_model": "AMD Ryzen 5 8500GE w/ Radeon 740M Graphics",
+      "cpu_base_mhz": null,
+      "cores_physical": null,
+      "threads_online": null,
+      "mem": {
+        "total_bytes": 15849508864,
+        "speed_mts": 5200,
+        "timings": null,
+        "parts": [
+          "M425R2GA3EB0-CWMOL"
+        ]
+      },
+      "board": {
+        "vendor": "LENOVO",
+        "name": "334A"
+      },
+      "chipset": "Advanced Micro Devices, Inc. [AMD] Phoenix Root Complex"
+    },
+    "context": {
+      "kernel": "6.12.96+deb13-amd64",
+      "os": "Debian GNU/Linux 13 (trixie)",
+      "bench_profile": null,
+      "governor": "performance",
+      "smt": true,
+      "boost": true,
+      "isolated_cpus": null,
+      "fingerprint": "/etc/spatial-bench/fingerprint.toml"
+    },
+    "toolchain": {
+      "rustc": "none (no rust subjects)",
+      "host": "x86_64",
+      "target_cpu": null,
+      "rustflags": null,
+      "features": [],
+      "cargo_profile": "release",
+      "opt_level": "3"
+    },
+    "source": {
+      "git_sha": null,
+      "git_dirty": false,
+      "crate_version": "0.1.0"
+    },
+    "subjects": {
+      "nanoflann": {
+        "version": "v1.7.1",
+        "pinned_ref": "v1.7.1",
+        "sha": "9a653cb243db6a09c94f833b28732b62f033e2b5",
+        "language": "cxx"
+      }
+    }
+  },
+  "points": [
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u64",
+        "impl": "nanoflann",
+        "isa": "native",
+        "k": 1,
+        "metric": "squared_euclidean",
+        "nanoflann.leaf_max_size": 32,
+        "parallelism": "single_threaded",
+        "query": "exact_nn",
+        "query_batching": "single_query",
+        "query_count": 1000,
+        "tree_size": 65536
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 233.7795,
+          "lower": 227.89812032,
+          "upper": 239.66087968,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 4277535.0277,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 16.435532239,
+        "median_ns": 228.814,
+        "mad_ns": 3.641
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u64",
+        "impl": "nanoflann",
+        "isa": "native",
+        "k": 1,
+        "metric": "squared_euclidean",
+        "nanoflann.leaf_max_size": 32,
+        "parallelism": "single_threaded",
+        "query": "exact_nn",
+        "query_batching": "single_query",
+        "query_count": 1000,
+        "tree_size": 131072
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 272.2963,
+          "lower": 267.19899166,
+          "upper": 277.39360834,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 3672470.0262,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 14.24444265,
+        "median_ns": 267.874,
+        "mad_ns": 3.229
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u64",
+        "impl": "nanoflann",
+        "isa": "native",
+        "k": 1,
+        "metric": "squared_euclidean",
+        "nanoflann.leaf_max_size": 32,
+        "parallelism": "single_threaded",
+        "query": "exact_nn",
+        "query_batching": "single_query",
+        "query_count": 1000,
+        "tree_size": 262144
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 313.2995,
+          "lower": 308.91449815,
+          "upper": 317.68450185,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 3191834.0119,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 12.253900138,
+        "median_ns": 308.324,
+        "mad_ns": 0.77
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u64",
+        "impl": "nanoflann",
+        "isa": "native",
+        "k": 1,
+        "metric": "squared_euclidean",
+        "nanoflann.leaf_max_size": 32,
+        "parallelism": "single_threaded",
+        "query": "exact_nn",
+        "query_batching": "single_query",
+        "query_count": 1000,
+        "tree_size": 524288
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 328.9634,
+          "lower": 324.19546564,
+          "upper": 333.73133436,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 3039851.8498,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 13.324006131,
+        "median_ns": 323.795,
+        "mad_ns": 1.601
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u64",
+        "impl": "nanoflann",
+        "isa": "native",
+        "k": 1,
+        "metric": "squared_euclidean",
+        "nanoflann.leaf_max_size": 32,
+        "parallelism": "single_threaded",
+        "query": "exact_nn",
+        "query_batching": "single_query",
+        "query_count": 1000,
+        "tree_size": 1048576
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 337.8942,
+          "lower": 333.31772731,
+          "upper": 342.47067269,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 2959506.2597,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 12.78896594,
+        "median_ns": 332.935,
+        "mad_ns": 1.291
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u64",
+        "impl": "nanoflann",
+        "isa": "native",
+        "k": 1,
+        "metric": "squared_euclidean",
+        "nanoflann.leaf_max_size": 32,
+        "parallelism": "single_threaded",
+        "query": "exact_nn",
+        "query_batching": "single_query",
+        "query_count": 1000,
+        "tree_size": 2097152
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 359.40213333,
+          "lower": 354.6509749,
+          "upper": 364.15329176,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 2782398.6205,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 13.277125745,
+        "median_ns": 354.155,
+        "mad_ns": 2.39
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u64",
+        "impl": "nanoflann",
+        "isa": "native",
+        "k": 1,
+        "metric": "squared_euclidean",
+        "nanoflann.leaf_max_size": 32,
+        "parallelism": "single_threaded",
+        "query": "exact_nn",
+        "query_batching": "single_query",
+        "query_count": 1000,
+        "tree_size": 4194304
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 362.32453333,
+          "lower": 356.98716104,
+          "upper": 367.66190563,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 2759956.6356,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 14.915302052,
+        "median_ns": 356.935,
+        "mad_ns": 2.91
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u64",
+        "impl": "nanoflann",
+        "isa": "native",
+        "k": 1,
+        "metric": "squared_euclidean",
+        "nanoflann.leaf_max_size": 32,
+        "parallelism": "single_threaded",
+        "query": "exact_nn",
+        "query_batching": "single_query",
+        "query_count": 1000,
+        "tree_size": 8388608
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 397.75566667,
+          "lower": 392.69302468,
+          "upper": 402.81830866,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 2514106.231,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 14.147567443,
+        "median_ns": 391.585,
+        "mad_ns": 2.07
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u64",
+        "impl": "nanoflann",
+        "isa": "native",
+        "k": 1,
+        "metric": "squared_euclidean",
+        "nanoflann.leaf_max_size": 32,
+        "parallelism": "single_threaded",
+        "query": "exact_nn",
+        "query_batching": "single_query",
+        "query_count": 1000,
+        "tree_size": 16777216
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 424.33033333,
+          "lower": 419.1468028,
+          "upper": 429.51386387,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 2356654.5247,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 14.485390832,
+        "median_ns": 418.246,
+        "mad_ns": 3.68
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u64",
+        "impl": "nanoflann",
+        "isa": "native",
+        "k": 5,
+        "metric": "squared_euclidean",
+        "nanoflann.leaf_max_size": 32,
+        "parallelism": "single_threaded",
+        "query": "exact_nn",
+        "query_batching": "single_query",
+        "query_count": 1000,
+        "tree_size": 65536
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 633.07616667,
+          "lower": 631.86816705,
+          "upper": 634.28416628,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 1579588.7646,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 3.3757583551,
+        "median_ns": 632.109,
+        "mad_ns": 1.441
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u64",
+        "impl": "nanoflann",
+        "isa": "native",
+        "k": 5,
+        "metric": "squared_euclidean",
+        "nanoflann.leaf_max_size": 32,
+        "parallelism": "single_threaded",
+        "query": "exact_nn",
+        "query_batching": "single_query",
+        "query_count": 1000,
+        "tree_size": 131072
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 705.4161,
+          "lower": 704.34508642,
+          "upper": 706.48711358,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 1417603.0289,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 2.9929504991,
+        "median_ns": 704.909,
+        "mad_ns": 1.92
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u64",
+        "impl": "nanoflann",
+        "isa": "native",
+        "k": 5,
+        "metric": "squared_euclidean",
+        "nanoflann.leaf_max_size": 32,
+        "parallelism": "single_threaded",
+        "query": "exact_nn",
+        "query_batching": "single_query",
+        "query_count": 1000,
+        "tree_size": 262144
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 744.0113,
+          "lower": 742.84339243,
+          "upper": 745.17920757,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 1344065.6076,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 3.2637210374,
+        "median_ns": 743.81,
+        "mad_ns": 2.39
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u64",
+        "impl": "nanoflann",
+        "isa": "native",
+        "k": 5,
+        "metric": "squared_euclidean",
+        "nanoflann.leaf_max_size": 32,
+        "parallelism": "single_threaded",
+        "query": "exact_nn",
+        "query_batching": "single_query",
+        "query_count": 1000,
+        "tree_size": 524288
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 781.82413333,
+          "lower": 780.78271151,
+          "upper": 782.86555515,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 1279060.0307,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 2.91025624,
+        "median_ns": 780.76,
+        "mad_ns": 0.87
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u64",
+        "impl": "nanoflann",
+        "isa": "native",
+        "k": 5,
+        "metric": "squared_euclidean",
+        "nanoflann.leaf_max_size": 32,
+        "parallelism": "single_threaded",
+        "query": "exact_nn",
+        "query_batching": "single_query",
+        "query_count": 1000,
+        "tree_size": 1048576
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 814.79523333,
+          "lower": 813.2492758,
+          "upper": 816.34119087,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 1227302.2216,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 4.3201827329,
+        "median_ns": 813.501,
+        "mad_ns": 2.22
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u64",
+        "impl": "nanoflann",
+        "isa": "native",
+        "k": 5,
+        "metric": "squared_euclidean",
+        "nanoflann.leaf_max_size": 32,
+        "parallelism": "single_threaded",
+        "query": "exact_nn",
+        "query_batching": "single_query",
+        "query_count": 1000,
+        "tree_size": 2097152
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 890.91093333,
+          "lower": 889.44178993,
+          "upper": 892.38007673,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 1122446.6583,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 4.1055254145,
+        "median_ns": 890.142,
+        "mad_ns": 2.76
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u64",
+        "impl": "nanoflann",
+        "isa": "native",
+        "k": 5,
+        "metric": "squared_euclidean",
+        "nanoflann.leaf_max_size": 32,
+        "parallelism": "single_threaded",
+        "query": "exact_nn",
+        "query_batching": "single_query",
+        "query_count": 1000,
+        "tree_size": 4194304
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 1073.7900333,
+          "lower": 1070.2120219,
+          "upper": 1077.3680448,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 931280.76156,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 9.9987632218,
+        "median_ns": 1072.254,
+        "mad_ns": 5.84
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u64",
+        "impl": "nanoflann",
+        "isa": "native",
+        "k": 5,
+        "metric": "squared_euclidean",
+        "nanoflann.leaf_max_size": 32,
+        "parallelism": "single_threaded",
+        "query": "exact_nn",
+        "query_batching": "single_query",
+        "query_count": 1000,
+        "tree_size": 8388608
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 1081.6051333,
+          "lower": 1078.6993474,
+          "upper": 1084.5109193,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 924551.82504,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 8.1202271222,
+        "median_ns": 1080.235,
+        "mad_ns": 4.32
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u64",
+        "impl": "nanoflann",
+        "isa": "native",
+        "k": 5,
+        "metric": "squared_euclidean",
+        "nanoflann.leaf_max_size": 32,
+        "parallelism": "single_threaded",
+        "query": "exact_nn",
+        "query_batching": "single_query",
+        "query_count": 1000,
+        "tree_size": 16777216
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 1115.0519333,
+          "lower": 1112.6235865,
+          "upper": 1117.4802801,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 896819.21542,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 6.7860220548,
+        "median_ns": 1115.255,
+        "mad_ns": 5.12
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u64",
+        "impl": "nanoflann",
+        "isa": "native",
+        "k": 20,
+        "metric": "squared_euclidean",
+        "nanoflann.leaf_max_size": 32,
+        "parallelism": "single_threaded",
+        "query": "exact_nn",
+        "query_batching": "single_query",
+        "query_count": 1000,
+        "tree_size": 65536
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 1728.6084333,
+          "lower": 1727.2334874,
+          "upper": 1729.9833793,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 578500.01233,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 3.8422904513,
+        "median_ns": 1728.133,
+        "mad_ns": 1.99
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u64",
+        "impl": "nanoflann",
+        "isa": "native",
+        "k": 20,
+        "metric": "squared_euclidean",
+        "nanoflann.leaf_max_size": 32,
+        "parallelism": "single_threaded",
+        "query": "exact_nn",
+        "query_batching": "single_query",
+        "query_count": 1000,
+        "tree_size": 131072
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 1764.0436,
+          "lower": 1762.8080586,
+          "upper": 1765.2791414,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 566879.41273,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 3.452723887,
+        "median_ns": 1763.454,
+        "mad_ns": 2.641
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u64",
+        "impl": "nanoflann",
+        "isa": "native",
+        "k": 20,
+        "metric": "squared_euclidean",
+        "nanoflann.leaf_max_size": 32,
+        "parallelism": "single_threaded",
+        "query": "exact_nn",
+        "query_batching": "single_query",
+        "query_count": 1000,
+        "tree_size": 262144
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 1934.1435667,
+          "lower": 1933.0221127,
+          "upper": 1935.2650206,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 517024.70139,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 3.1339063237,
+        "median_ns": 1934.916,
+        "mad_ns": 2.03
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u64",
+        "impl": "nanoflann",
+        "isa": "native",
+        "k": 20,
+        "metric": "squared_euclidean",
+        "nanoflann.leaf_max_size": 32,
+        "parallelism": "single_threaded",
+        "query": "exact_nn",
+        "query_batching": "single_query",
+        "query_count": 1000,
+        "tree_size": 524288
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 1949.0414333,
+          "lower": 1947.1281336,
+          "upper": 1950.9547331,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 513072.72534,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 5.3467216041,
+        "median_ns": 1948.976,
+        "mad_ns": 2.34
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u64",
+        "impl": "nanoflann",
+        "isa": "native",
+        "k": 20,
+        "metric": "squared_euclidean",
+        "nanoflann.leaf_max_size": 32,
+        "parallelism": "single_threaded",
+        "query": "exact_nn",
+        "query_batching": "single_query",
+        "query_count": 1000,
+        "tree_size": 1048576
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 2083.2158667,
+          "lower": 2081.528274,
+          "upper": 2084.9034594,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 480027.06585,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 4.7159825751,
+        "median_ns": 2082.618,
+        "mad_ns": 2.54
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u64",
+        "impl": "nanoflann",
+        "isa": "native",
+        "k": 20,
+        "metric": "squared_euclidean",
+        "nanoflann.leaf_max_size": 32,
+        "parallelism": "single_threaded",
+        "query": "exact_nn",
+        "query_batching": "single_query",
+        "query_count": 1000,
+        "tree_size": 2097152
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 3019.9437667,
+          "lower": 3016.4496674,
+          "upper": 3023.4378659,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 331131.99359,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 9.7642702533,
+        "median_ns": 3019.82,
+        "mad_ns": 7.361
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u64",
+        "impl": "nanoflann",
+        "isa": "native",
+        "k": 20,
+        "metric": "squared_euclidean",
+        "nanoflann.leaf_max_size": 32,
+        "parallelism": "single_threaded",
+        "query": "exact_nn",
+        "query_batching": "single_query",
+        "query_count": 1000,
+        "tree_size": 4194304
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 4042.7494333,
+          "lower": 4040.2304612,
+          "upper": 4045.2684055,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 247356.41337,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 7.0392748712,
+        "median_ns": 4043.424,
+        "mad_ns": 5.67
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u64",
+        "impl": "nanoflann",
+        "isa": "native",
+        "k": 20,
+        "metric": "squared_euclidean",
+        "nanoflann.leaf_max_size": 32,
+        "parallelism": "single_threaded",
+        "query": "exact_nn",
+        "query_batching": "single_query",
+        "query_count": 1000,
+        "tree_size": 8388608
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 3917.7674,
+          "lower": 3914.6808821,
+          "upper": 3920.8539179,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 255247.41464,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 8.6252831436,
+        "median_ns": 3915.883,
+        "mad_ns": 3.619
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u64",
+        "impl": "nanoflann",
+        "isa": "native",
+        "k": 20,
+        "metric": "squared_euclidean",
+        "nanoflann.leaf_max_size": 32,
+        "parallelism": "single_threaded",
+        "query": "exact_nn",
+        "query_batching": "single_query",
+        "query_count": 1000,
+        "tree_size": 16777216
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 4304.0549333,
+          "lower": 4302.0140029,
+          "upper": 4306.0958638,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 232339.04202,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 5.7033858712,
+        "median_ns": 4304.498,
+        "mad_ns": 3.48
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u64",
+        "impl": "nanoflann",
+        "isa": "native",
+        "k": 50,
+        "metric": "squared_euclidean",
+        "nanoflann.leaf_max_size": 32,
+        "parallelism": "single_threaded",
+        "query": "exact_nn",
+        "query_batching": "single_query",
+        "query_count": 1000,
+        "tree_size": 65536
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 3696.5804667,
+          "lower": 3695.0861998,
+          "upper": 3698.0747335,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 270520.28463,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 4.1757330273,
+        "median_ns": 3696.13,
+        "mad_ns": 2.65
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u64",
+        "impl": "nanoflann",
+        "isa": "native",
+        "k": 50,
+        "metric": "squared_euclidean",
+        "nanoflann.leaf_max_size": 32,
+        "parallelism": "single_threaded",
+        "query": "exact_nn",
+        "query_batching": "single_query",
+        "query_count": 1000,
+        "tree_size": 131072
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 4048.2845,
+          "lower": 4046.5145245,
+          "upper": 4050.0544755,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 247018.21228,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 4.9462015712,
+        "median_ns": 4047.804,
+        "mad_ns": 2.98
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u64",
+        "impl": "nanoflann",
+        "isa": "native",
+        "k": 50,
+        "metric": "squared_euclidean",
+        "nanoflann.leaf_max_size": 32,
+        "parallelism": "single_threaded",
+        "query": "exact_nn",
+        "query_batching": "single_query",
+        "query_count": 1000,
+        "tree_size": 262144
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 4077.7115667,
+          "lower": 4073.7130988,
+          "upper": 4081.7100346,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 245235.58953,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 11.173729934,
+        "median_ns": 4075.204,
+        "mad_ns": 2.139
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u64",
+        "impl": "nanoflann",
+        "isa": "native",
+        "k": 50,
+        "metric": "squared_euclidean",
+        "nanoflann.leaf_max_size": 32,
+        "parallelism": "single_threaded",
+        "query": "exact_nn",
+        "query_batching": "single_query",
+        "query_count": 1000,
+        "tree_size": 524288
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 4358.438,
+          "lower": 4356.8353004,
+          "upper": 4360.0406996,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 229439.99662,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 4.4787486794,
+        "median_ns": 4357.578,
+        "mad_ns": 2.819
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u64",
+        "impl": "nanoflann",
+        "isa": "native",
+        "k": 50,
+        "metric": "squared_euclidean",
+        "nanoflann.leaf_max_size": 32,
+        "parallelism": "single_threaded",
+        "query": "exact_nn",
+        "query_batching": "single_query",
+        "query_count": 1000,
+        "tree_size": 1048576
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 4936.7567333,
+          "lower": 4933.0394618,
+          "upper": 4940.4740049,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 202562.13827,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 10.387925927,
+        "median_ns": 4940.226,
+        "mad_ns": 8.12
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u64",
+        "impl": "nanoflann",
+        "isa": "native",
+        "k": 50,
+        "metric": "squared_euclidean",
+        "nanoflann.leaf_max_size": 32,
+        "parallelism": "single_threaded",
+        "query": "exact_nn",
+        "query_batching": "single_query",
+        "query_count": 1000,
+        "tree_size": 2097152
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 7744.975,
+          "lower": 7740.0189984,
+          "upper": 7749.9310016,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 129115.9752,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 13.849560501,
+        "median_ns": 7745.084,
+        "mad_ns": 9.42
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u64",
+        "impl": "nanoflann",
+        "isa": "native",
+        "k": 50,
+        "metric": "squared_euclidean",
+        "nanoflann.leaf_max_size": 32,
+        "parallelism": "single_threaded",
+        "query": "exact_nn",
+        "query_batching": "single_query",
+        "query_count": 1000,
+        "tree_size": 4194304
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 9012.5413,
+          "lower": 9006.1246205,
+          "upper": 9018.9579795,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 110956.4957,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 17.931429105,
+        "median_ns": 9012.381,
+        "mad_ns": 13.12
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u64",
+        "impl": "nanoflann",
+        "isa": "native",
+        "k": 50,
+        "metric": "squared_euclidean",
+        "nanoflann.leaf_max_size": 32,
+        "parallelism": "single_threaded",
+        "query": "exact_nn",
+        "query_batching": "single_query",
+        "query_count": 1000,
+        "tree_size": 8388608
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 9900.1895,
+          "lower": 9894.0660904,
+          "upper": 9906.3129096,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 101008.16757,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 17.111885469,
+        "median_ns": 9899.252,
+        "mad_ns": 13.981
+      }
+    },
+    {
+      "tags": {
+        "axis": "f32",
+        "dataset": "uniform",
+        "defaults_or_tuned": "default",
+        "dims": 3,
+        "idx": "u64",
+        "impl": "nanoflann",
+        "isa": "native",
+        "k": 50,
+        "metric": "squared_euclidean",
+        "nanoflann.leaf_max_size": 32,
+        "parallelism": "single_threaded",
+        "query": "exact_nn",
+        "query_batching": "single_query",
+        "query_count": 1000,
+        "tree_size": 16777216
+      },
+      "metrics": {
+        "latency_ns": {
+          "point": 10141.1164,
+          "lower": 10134.726759,
+          "upper": 10147.506041,
+          "unit": "ns/query"
+        },
+        "throughput_qps": {
+          "point": 98608.472732,
+          "unit": "queries/s"
+        }
+      },
+      "stats": {
+        "samples": 30,
+        "ci": 0.95,
+        "std_dev_ns": 17.855868823,
+        "median_ns": 10145.436,
+        "mad_ns": 10.98
+      }
+    }
+  ]
+}
